@@ -1,0 +1,340 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CareerTrack - Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <h2>CareerTrack</h2>
+
+        <nav>
+            <a href="#" class="active">Dashboard</a>
+
+            <a href="#applications">My Applications</a>
+
+            <a href="#" id="sidebarAdd">Add Application</a>
+
+            <a href="#" id="settingsButton">Settings</a>
+        </nav>
+
+        <button class="logout" id="logoutButton">
+            Logout
+        </button>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <header>
+
+            <div>
+                <h1>Dashboard</h1>
+                <p>Welcome back! Track your job search.</p>
+            </div>
+
+            <button class="add-btn" id="openForm">
+                + Add Application
+            </button>
+
+        </header>
+
+
+        <!-- STATISTICS -->
+
+        <section class="stats">
+
+            <div class="card">
+                <h3>Total Applications</h3>
+                <h2 id="totalCount">0</h2>
+            </div>
+
+            <div class="card">
+                <h3>Applied</h3>
+                <h2 id="appliedCount">0</h2>
+            </div>
+
+            <div class="card">
+                <h3>Interviews</h3>
+                <h2 id="interviewCount">0</h2>
+            </div>
+
+            <div class="card">
+                <h3>Selected</h3>
+                <h2 id="offerCount">0</h2>
+            </div>
+
+        </section>
+
+
+        <!-- APPLICATION TABLE -->
+
+        <section class="applications" id="applications">
+
+            <h2>Recent Applications</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Company</th>
+                        <th>Position</th>
+                        <th>Status</th>
+                        <th>Applied Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="applicationList">
+
+                    <tr>
+                        <td colspan="5">
+                            No applications yet.
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ============================== -->
+<!-- ADD APPLICATION MODAL -->
+<!-- ============================== -->
+
+<div class="modal" id="applicationModal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2>Add New Application</h2>
+
+            <button
+                type="button"
+                id="closeForm"
+                class="close-btn">
+
+                &times;
+
+            </button>
+
+        </div>
+
+
+        <form id="applicationForm">
+
+            <label for="company">
+                Company Name
+            </label>
+
+            <input
+                type="text"
+                id="company"
+                placeholder="Enter company name"
+                minlength="2"
+                maxlength="150"
+                required
+            >
+
+
+            <label for="position">
+                Job Position
+            </label>
+
+            <input
+                type="text"
+                id="position"
+                placeholder="Enter job position"
+                minlength="2"
+                maxlength="150"
+                required
+            >
+
+
+            <label for="status">
+                Application Status
+            </label>
+
+            <select id="status" required>
+
+                <option value="Applied">
+                    Applied
+                </option>
+
+                <option value="Interview">
+                    Interview
+                </option>
+
+                <option value="Selected">
+                    Selected
+                </option>
+
+                <option value="Rejected">
+                    Rejected
+                </option>
+
+            </select>
+
+
+            <label for="appliedDate">
+                Applied Date
+            </label>
+
+            <input
+                type="date"
+                id="appliedDate"
+                required
+            >
+
+
+            <div class="form-buttons">
+
+                <button
+                    type="button"
+                    id="cancelForm"
+                    class="cancel-btn">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    type="submit"
+                    class="save-btn">
+
+                    Save Application
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ============================== -->
+<!-- SETTINGS MODAL -->
+<!-- ============================== -->
+
+<div class="modal" id="settingsModal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2>Settings</h2>
+
+            <button
+                type="button"
+                id="closeSettings"
+                class="close-btn">
+
+                &times;
+
+            </button>
+
+        </div>
+
+
+        <form id="settingsForm">
+
+            <label for="userName">
+                Your Name
+            </label>
+
+            <input
+                type="text"
+                id="userName"
+                placeholder="Enter your name"
+            >
+
+
+            <label for="userEmail">
+                Email Address
+            </label>
+
+            <input
+                type="email"
+                id="userEmail"
+                placeholder="Enter your email"
+            >
+
+
+            <label for="theme">
+                Theme
+            </label>
+
+            <select id="theme">
+
+                <option value="light">
+                    Light
+                </option>
+
+                <option value="dark">
+                    Dark
+                </option>
+
+            </select>
+
+
+            <div class="form-buttons">
+
+                <button
+                    type="button"
+                    id="cancelSettings"
+                    class="cancel-btn">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    type="submit"
+                    class="save-btn">
+
+                    Save Settings
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- JAVASCRIPT -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
